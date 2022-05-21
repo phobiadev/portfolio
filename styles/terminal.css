@@ -1,0 +1,38 @@
+.terminal-input-container {
+    display: flex;
+}
+
+.terminal-input-container * {
+    font-size: 1rem;
+}
+
+.terminal-input-form {
+    display: flex;
+}
+  
+.terminal-input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    /* width: calc(100vw - 15rem); */
+    margin-left: 5px;
+    color: lightgray;
+
+}
+
+.terminal-input-old {
+    margin-left: 7px !important;
+    
+}
+
+.terminal-input-prompt-user {
+    color: rgb(87, 211, 180);
+}
+
+.terminal-input-prompt-domain {
+    color: lightpink;
+}
+
+.terminal-input-prompt-folder {
+    color: rgb(255, 255, 154);
+}
