@@ -12,8 +12,8 @@ let CommandsContent = {
 Hi! My name is Joseph Preston, and I am a student at Latymer Upper School, currently studying Computer Science at GCSE. 
     `,
     contact: `
-<a class="highlight">email</a>      joseph@phobia.dev
-<a class="highlight">discord</a>    joseph p#0001
+<a href="mailto:joseph@phobia.dev" class="highlight">email</a>      joseph@phobia.dev
+<a href="https://discord.com/channels/@me/716989982270685185" class="highlight">discord</a>    joseph p<a style="color: gray">#0001</a>
 
     `,
     projects: `
