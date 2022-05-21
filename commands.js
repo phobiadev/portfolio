@@ -6,6 +6,7 @@ let CommandsContent = {
     <a class="highlight">contact</a>     Contact Details
     <a class="highlight">github</a>      Github page
     <a class="highlight">blog</a>        My Blog
+    <a class="highlight">source</a>      Source code
     `,
     about: `
     Hi! My name is Joseph Preston, and I am a student at Latymer Upper School, currently studying Computer Science at GCSE. 

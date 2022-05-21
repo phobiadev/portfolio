@@ -38,7 +38,10 @@ export default function Portfolio() {
 
       case "blog":
         openInNewTab("https://blog.phobia.dev")
-        
+        break;
+
+      case "source":
+        openInNewTab("https://github.com/phobiadev/portfolio")
         break;
 
       case "jash":
