@@ -53,9 +53,14 @@ export default function Portfolio() {
         break;
 
       default:
+        if (["unlock","secret","sudo","su","ssh","rickroll","rm","chown","chmod","deluser","adduser","poweroff","reboot",":(){:|:&};:","mv"].includes(val.trim().split(" ")[0])) {
+          setHistory([...newHistory,["error","-jash: security measures activating in 1 second"]])
+          setTimeout(() => openInNewTab("https://www.youtube.com/watch?v=dQw4w9WgXcQ"),1000)
+          return;
+        } 
         setHistory([...newHistory, ["error",`
 -jash: ${val.split(" ")[0]}: not found 
-type <a class="highlight">help</a> to see all commands
+type <a class="highlight">help</a> to see a list of commands
           `]])
     }
   }
