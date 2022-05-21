@@ -14,7 +14,6 @@
     border: 0;
     outline: 0;
     background: transparent;
-    /* width: calc(100vw - 15rem); */
     margin-left: 5px;
     color: lightgray;
 
@@ -35,4 +34,32 @@
 
 .terminal-input-prompt-folder {
     color: rgb(255, 255, 154);
+}
+
+.output {
+    animation: append-animate .4s linear;
+    width: fit-content;
+    margin-left: 40px;
+}
+
+.error {
+    color: rgb(202, 66, 66);
+  }
+  
+.highlight {
+text-shadow: 0 0 3px #9a49e6;
+color: rgb(167, 57, 200) !important;
+}
+
+.incomplete {
+color: lightcoral;
+font-size: .75rem;
+margin-left: 10px;
+text-shadow: 0 0 3px #d06b1e;
+}
+
+@media (max-width: 700px) {
+    .output {
+        margin-left: 25px;
+    }
 }

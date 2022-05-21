@@ -8,11 +8,15 @@
   white-space: pre-wrap;
   color: white;
   transition: padding .5s ease;
+  overflow:hidden;
 }
 
-.output {
-  animation: append-animate .4s linear;
-}
+/* .App {
+  max-width: 800px;
+  width: 100vw;
+
+} */
+
 
 a[href] {
   border: none;
@@ -27,40 +31,32 @@ a[href]:hover {
 
 @keyframes append-animate {
 	from {
-		opacity: 0;
-    transform: translateX(-300px);
+		transform: translateX(-50%)
 	}
   50% {
-    transform: translateX(10px);
+    transform: translateX(5%)
   }
 	to {
-		opacity: 1;	
-    transform: translateX(0px);
+		transform: translateX(0)
 	}
 }
 
 body {
   background-color: rgb(28, 28, 39);
+  display: grid;
+  /* justify-content: center;
+  align-items: center; */
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-.error {
-  color: rgb(202, 66, 66);
-}
-
-.highlight {
-  text-shadow: 0 0 3px #9a49e6;
-  color: rgb(167, 57, 200) !important;
-}
-
-.incomplete {
-  color: lightcoral;
-  font-size: .75rem;
-  margin-left: 10px;
-  text-shadow: 0 0 3px #d06b1e;
+.title {
+  background-color: rgb(43, 41, 49);
+  border-radius: 5px;
+  width: fit-content;
+  text-shadow: 0 0 10px #a719ca;
 }
 
 @media(max-width: 700px) {
@@ -68,8 +64,8 @@ html {
     font-size: .9rem;
   }
 
-  .ascii-title {
-    font-size: .6rem;
+  .title {
+    font-size: .65em;
   }
 }
 

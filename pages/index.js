@@ -12,6 +12,10 @@ function openInNewTab(url) {
   window.open(url, '_blank').focus();
 }
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 export default function Portfolio() {
 
   const historyRef = useRef(null)
@@ -45,13 +49,13 @@ export default function Portfolio() {
         break;
 
       case "jash":
-        setHistory([...newHistory,["message","    bash + joseph = jash, get it agagag"]])
+        setHistory([...newHistory,["message","bash + joseph = jash, get it agagag"]])
         break;
 
       default:
         setHistory([...newHistory, ["error",`
-    -jash: ${val.split(" ")[0]}: not found 
-    type <a class="highlight">help</a> to see all commands
+-jash: ${val.split(" ")[0]}: not found 
+type <a class="highlight">help</a> to see all commands
           `]])
     }
   }
@@ -70,7 +74,11 @@ export default function Portfolio() {
       <Head>
         <title>phobia.dev</title>
       </Head>
-      <p>Welcome to phobia.dev</p>
+      <p className="title">{`
+  ___   _     ___   ___   _    __         ___   ____  _     
+ | |_) | |_| / / \\ | |_) | |  / /\\   __  | | \\ | |_  \\ \\  / 
+ |_|   |_| | \\_\\_/ |_|_) |_| /_/--\\ (_() |_|_/ |_|__  \\_\\/  
+      `}</p>
       <p>type <a className="highlight">help</a> to get started</p>
 
       {history.map(item => {
