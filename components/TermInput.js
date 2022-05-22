@@ -19,8 +19,10 @@ export default function TermInput({ handleSubmit }) {
         <div className="terminal-input-container" onClick={setInputFocus} >
             <form className="terminal-input-form" onSubmit={(event) => {
                     event.preventDefault()
-                    handleSubmit(line)
-                    setLine("")
+                    if (line) {
+                        handleSubmit(line)
+                        setLine("")
+                    }
                 }}
             >
                 <p className="terminal-input-prompt">

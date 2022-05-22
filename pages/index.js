@@ -49,9 +49,6 @@ export default function Portfolio() {
         setHistory([...newHistory,["message","bash + joseph = jash, get it agagag"]])
         break;
 
-      case "":
-        break;
-
       default:
         if (["unlock","secret","sudo","su","ssh","rickroll","rm","chown","chmod","deluser","adduser","poweroff","reboot",":(){:|:&};:","mv"].includes(val.trim().split(" ")[0])) {
           setHistory([...newHistory,["error","-jash: security measures activating in 1 second"]])

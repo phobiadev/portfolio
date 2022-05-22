@@ -40,6 +40,11 @@
     overflow: hidden;
 }
 
+.terminal-input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .terminal-input-prompt-user {
     color: rgb(87, 211, 180);
 }
