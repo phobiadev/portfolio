@@ -12,10 +12,6 @@ function openInNewTab(url) {
   window.open(url, '_blank').focus();
 }
 
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 export default function Portfolio() {
 
   const historyRef = useRef(null)
@@ -24,6 +20,7 @@ export default function Portfolio() {
   useEffect(() => {
     historyRef.current?.scrollIntoView({ behavior: "smooth" })
   },[history])
+  
 
   function handleOutput(newHistory, val) {
     if (Object.keys(CommandsContent).includes(val.trim())) {
@@ -50,6 +47,9 @@ export default function Portfolio() {
 
       case "jash":
         setHistory([...newHistory,["message","bash + joseph = jash, get it agagag"]])
+        break;
+
+      case "":
         break;
 
       default:
@@ -80,10 +80,14 @@ type <a class="highlight">help</a> to see a list of commands
         <title>phobia.dev</title>
       </Head>
       <p className="title">{`
-  ___   _     ___   ___   _    __         ___   ____  _     
- | |_) | |_| / / \\ | |_) | |  / /\\   __  | | \\ | |_  \\ \\  / 
- |_|   |_| | \\_\\_/ |_|_) |_| /_/--\\ (_() |_|_/ |_|__  \\_\\/  
+██████╗░██╗░░██╗░█████╗░██████╗░██╗░█████╗░░░░██████╗░███████╗██╗░░░██╗
+██╔══██╗██║░░██║██╔══██╗██╔══██╗██║██╔══██╗░░░██╔══██╗██╔════╝██║░░░██║
+██████╔╝███████║██║░░██║██████╦╝██║███████║░░░██║░░██║█████╗░░╚██╗░██╔╝
+██╔═══╝░██╔══██║██║░░██║██╔══██╗██║██╔══██║░░░██║░░██║██╔══╝░░░╚████╔╝░
+██║░░░░░██║░░██║╚█████╔╝██████╦╝██║██║░░██║██╗██████╔╝███████╗░░╚██╔╝░░
+╚═╝░░░░░╚═╝░░╚═╝░╚════╝░╚═════╝░╚═╝╚═╝░░╚═╝╚═╝╚═════╝░╚══════╝░░░╚═╝░░░
       `}</p>
+
       <p>type <a className="highlight">help</a> to get started</p>
 
       {history.map(item => {

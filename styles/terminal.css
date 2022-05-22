@@ -15,13 +15,29 @@
     outline: 0;
     background: transparent;
     margin-left: 5px;
-    color: lightgray;
+    margin-right: 0;
+    color: transparent;
+    text-shadow: 0 0 0 #c2c2c2;
 
 }
 
 .terminal-input-old {
     margin-left: 7px !important;
     
+}
+
+.terminal-input:focus {
+    border-right: 11px solid rgb(97, 97, 97);
+    animation-name: cursor-blink;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    outline: none;
+  }
+  
+.terminal-input-container {
+    align-items: center;
+    height: 1.5rem;
+    overflow: hidden;
 }
 
 .terminal-input-prompt-user {
@@ -57,6 +73,13 @@ font-size: .75rem;
 margin-left: 10px;
 text-shadow: 0 0 3px #d06b1e;
 }
+
+
+@keyframes cursor-blink {
+    50% {
+      border-color: transparent;
+    }
+  }
 
 @media (max-width: 700px) {
     .output {

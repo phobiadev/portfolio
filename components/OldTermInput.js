@@ -2,7 +2,7 @@ export default function OldTermInput({ content }) {
     return (
         <div className="terminal-input-container">
             <p className="terminal-input-prompt">
-                <a className="terminal-input-prompt-user">visitor</a>
+                <a className="terminal-input-prompt-user">guest</a>
                 @
                 <a className="terminal-input-prompt-domain">phobia.dev</a>
                 :
