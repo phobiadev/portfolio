@@ -2,11 +2,17 @@ let CommandsContent = {
     help: `
 <a class="highlight">clear</a>       Clears terminal
 <a class="highlight">projects</a>    List of my projects
+ - <a class="highlight">projects <a class="flag">ids</a></a>    See all project ids
+ - <a class="highlight">projects <a class="flag">[id]</a></a>   Go to project site
+<a class="highlight">skills</a>      My skills
 <a class="highlight">about</a>       About me
 <a class="highlight">contact</a>     Contact Details
 <a class="highlight">github</a>      Github page
+ - <a class="highlight">github <a class="flag">all</a></a>      See all github repos
+ - <a class="highlight">github <a class="flag">[id]</a></a>     Go to github project
 <a class="highlight">blog</a>        My Blog
 <a class="highlight">source</a>      Source code
+
     `,
     about: `
 Hi! My name is Joseph Preston, and I am a student at Latymer Upper School, currently studying Computer Science at GCSE. 
@@ -24,6 +30,18 @@ Hi! My name is Joseph Preston, and I am a student at Latymer Upper School, curre
 <a class="highlight" href="https://connect4.phobia.dev">Connect 4</a>
 <a class="highlight" href="https://minesweeper.phobia.dev">Minesweeper</a>
 <a class="highlight" href="https://snake.phobia.dev">Snake</a><a class="incomplete">[INCOMPLETE]</a>
+    `,
+    skills: `
+language    confidence (out of 10)
+
+<a class="highlight">python</a>      ███████████████████ 9.5
+<a class="highlight">js/nodejs</a>   ██████████████████ 9
+<a class="highlight">react(jsx)</a>  ████████████████ 8   
+<a class="highlight">go</a>          ███████████████ 7.5    
+<a class="highlight">css</a>         ██████████████ 7    
+<a class="highlight">vue</a>         ████████ 4
+
+[want to learn: <a class="highlight">rust</a>, <a class="highlight">typescript</a>, <a class="highlight">dart</a>]
     `
 }
 

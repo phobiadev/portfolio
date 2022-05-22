@@ -8,32 +8,89 @@ import Message from "../components/Message"
 
 import CommandsContent from "../commands"
 
+const projects = [
+  "sorting",
+  "gameoflife",
+  "2048",
+  "wordle",
+  "connect4",
+  "minesweeper",
+  "snake"
+]
+
 function openInNewTab(url) {
   window.open(url, '_blank').focus();
 }
 
+async function getRepos() {
+  const response = await fetch('https://api.github.com/users/phobiadev/repos');
+  let repos = await response.json();
+  return repos.map(repo => repo.name)
+}
+
 export default function Portfolio() {
+
+  
 
   const historyRef = useRef(null)
   const [history, setHistory] = useState([])
+  const [repos, setRepos] = useState(async () => await getRepos())
 
   useEffect(() => {
     historyRef.current?.scrollIntoView({ behavior: "smooth" })
+    updateRepos()
   },[history])
+
+  async function updateRepos() {
+    setRepos(await getRepos())
+    console.log(await getRepos())
+  }
   
 
-  function handleOutput(newHistory, val) {
+  async function handleOutput(newHistory, val) {
     if (Object.keys(CommandsContent).includes(val.trim())) {
       setHistory([...newHistory, ["message",CommandsContent[val.trim()]]])
       return
     }
 
-    switch (val.trim()) {
+    switch (val.trim().split(" ")[0]) {
       case "clear":
         setHistory([])
         break;
 
+      case "projects":
+        // hasnt been picked up by first if statement so must contain flags
+        let first = val.trim().indexOf(" ")
+        let rest = val.trim().slice(first+1)
+        if (rest === "ids") {
+          setHistory([...newHistory, ["message",projects.join("\n")]])
+          return;
+        }
+        if (projects.includes(rest)) {
+          openInNewTab(`https://${rest}.phobia.dev`)
+          return;
+        }
+        setHistory([...newHistory,["error",`-jash: ${rest} is not one of my projects\ntype <a class="highlight">projects <a class="flag">ids</a></a> to see all of my project ids`]])
+        break;
+        
+
       case "github":
+        if (val.trim().split(" ").length > 1) {
+          let first = val.trim().indexOf(" ")
+          let rest = val.trim().slice(first+1)
+          if (rest === "all") {
+            setHistory([...newHistory, ["message",repos.join("\n")]])
+            return;
+          }
+          if (repos.includes(rest)) {
+            openInNewTab(`https://github.com/phobiadev/${rest}`)
+            return
+          }
+          setHistory([...newHistory,["error",`-jash: ${rest} is not one of my github repos\ntype <a class="highlight">github <a class="flag">all</a></a> to see all of my github repos`]])
+         
+          return
+        }
+
         openInNewTab("https://github.com/phobiadev")
         break;
 
@@ -46,18 +103,13 @@ export default function Portfolio() {
         break;
 
       case "jash":
-        setHistory([...newHistory,["message","bash + joseph = jash, get it agagag"]])
+        setHistory([...newHistory,["message","bash + joseph = jash, get it"]])
         break;
 
       case "":
         break;
 
       default:
-        if (["unlock","secret","sudo","su","ssh","rickroll","rm","chown","chmod","deluser","adduser","poweroff","reboot",":(){:|:&};:","mv"].includes(val.trim().split(" ")[0])) {
-          setHistory([...newHistory,["error","-jash: security measures activating in 1 second"]])
-          setTimeout(() => openInNewTab("https://www.youtube.com/watch?v=dQw4w9WgXcQ"),1000)
-          return;
-        } 
         setHistory([...newHistory, ["error",`
 -jash: ${val.split(" ")[0]}: not found 
 type <a class="highlight">help</a> to see a list of commands

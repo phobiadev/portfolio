@@ -78,7 +78,8 @@ html {
 
 .title {
   width: fit-content;
-  text-shadow: 0 0 10px #a719ca;
+  text-shadow: 0 2px 10px #540588;
+  color: rgb(200, 158, 224);
 }
 
 .margin-none {

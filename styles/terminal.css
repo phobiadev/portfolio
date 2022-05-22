@@ -61,7 +61,10 @@
     animation: append-animate .4s linear;
     width: fit-content;
     margin-left: 40px;
+    overflow-y: visible !important;
 }
+
+
 
 .error {
     color: rgb(202, 66, 66);
@@ -71,6 +74,12 @@
 text-shadow: 0 0 3px #9a49e6;
 color: rgb(167, 57, 200) !important;
 }
+
+.flag {
+    text-shadow: 0 0 2px #4959e6;
+    font-weight: 200;
+    color: rgb(80, 100, 211) !important;
+    }
 
 .incomplete {
 color: lightcoral;
