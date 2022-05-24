@@ -130,6 +130,7 @@ type <a class="highlight">help</a> to see a list of commands
     <div className="App">
       <Head>
         <title>phobia.dev</title>
+        <meta name="description" content="The phobia.dev home site, where you can find all of my info and projects - Joseph Preston"/>
       </Head>
       <p className="title">{`
 ██████╗░██╗░░██╗░█████╗░██████╗░██╗░█████╗░░░░██████╗░███████╗██╗░░░██╗

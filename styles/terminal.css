@@ -64,7 +64,10 @@
     overflow-y: visible !important;
 }
 
+.sub {
+    font-size: 90%;
 
+}
 
 .error {
     color: rgb(202, 66, 66);
@@ -79,13 +82,13 @@ color: rgb(167, 57, 200) !important;
     text-shadow: 0 0 2px #4959e6;
     font-weight: 200;
     color: rgb(80, 100, 211) !important;
-    }
+}
 
 .incomplete {
-color: lightcoral;
-font-size: .75rem;
-margin-left: 10px;
-text-shadow: 0 0 3px #d06b1e;
+    color: lightcoral;
+    font-size: .75rem;
+    margin-left: 10px;
+    text-shadow: 0 0 3px #d06b1e;
 }
 
 

@@ -17,6 +17,11 @@ export default function TermInput({ handleSubmit }) {
 
     return (
         <div className="terminal-input-container" onClick={setInputFocus} >
+            <style>{`
+                .prevent-inline-custom {
+                    width: ${line.length}ch;
+                }
+            `}</style>
             <form className="terminal-input-form" onSubmit={(event) => {
                     event.preventDefault()
                     handleSubmit(line)
@@ -32,9 +37,9 @@ export default function TermInput({ handleSubmit }) {
                     <a className="terminal-input-prompt-folder">~</a>
                     $
                 </p>
-                <input ref={inputRef} spellcheck="false" type="text" className="terminal-input terminal-input-active" onChange={
+                <input ref={inputRef} spellcheck="false" type="text" className="terminal-input terminal-input-active prevent-inline-custom" onChange={
                     (event) => setLine(event.target.value)
-                } value={line} style={{width: `calc(${line.length}ch)`}}></input>
+                } value={line}></input>
             </form>
         </div>
     )
