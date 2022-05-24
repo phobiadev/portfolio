@@ -48,6 +48,9 @@ export default function Portfolio() {
   
 
   async function handleOutput(newHistory, val) {
+
+    val = val.toLowerCase()
+
     if (Object.keys(CommandsContent).includes(val.trim())) {
       setHistory([...newHistory, ["message",CommandsContent[val.trim()]]])
       return
