@@ -38,13 +38,12 @@ export default function Portfolio() {
 
   useEffect(() => {
     historyRef.current?.scrollIntoView({ behavior: "smooth" })
-    updateRepos()
   },[history])
 
-  async function updateRepos() {
-    setRepos(await getRepos())
-    console.log(await getRepos())
-  }
+  // async function updateRepos() {
+  //   setRepos(await getRepos())
+  //   console.log(await getRepos())
+  // }
   
 
   async function handleOutput(newHistory, val) {
