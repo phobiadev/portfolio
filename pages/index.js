@@ -15,7 +15,8 @@ const projects = [
   "wordle",
   "connect4",
   "minesweeper",
-  "snake"
+  "snake",
+  "cssbookmarklet"
 ]
 
 function openInNewTab(url) {
@@ -85,7 +86,7 @@ export default function Portfolio() {
           let first = val.trim().indexOf(" ")
           let rest = val.trim().slice(first+1)
           if (rest === "all") {
-            setHistory([...newHistory, ["message",repos.join("\n")]])
+            setHistory([...newHistory, ["message","<div>" + repos.join("\n") + "</div>"]])
             return;
           }
           if (repos.includes(rest)) {
